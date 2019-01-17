@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t oussoulessou/portefeuille-actions-angular -f Dockerfile.dev .
+
+script:
+  - docker run oussoulessou/portefeuille-actions-angular ng test --watch=false
