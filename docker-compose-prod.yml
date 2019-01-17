@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+
+  portefeuille-actions-prod:
+    container_name: portefeuille-actions-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - '80:80'
