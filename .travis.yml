@@ -10,6 +10,9 @@ script:
 
 deploy:
   provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure:  "$AWS_SECRET_KEY"
   region: "eu-west-3"
   name: "portefeuille-actions-angular"
   env: "PortefeuilleActionsAngular-env"
@@ -17,8 +20,3 @@ deploy:
   bucket_path: "portefeuille-actions-angular"
   on:
     branch: master
-  access_key_id:
-    secure: "$AWS_ACCESS_KEY"
-  secret_access_key:
-    secure:  "$AWS_SECRET_KEY"
-  skip_cleanup: true
