@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run oussoulessou/portefeuille-actions-angular ng test --watch=false
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  name: "portefeuille-actions-angular"
+  env: "PortefeuilleActionsAngular-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-748333131584"
+  bucket_path: "portefeuille-actions-angular"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure:  "$AWS_SECRET_KEY"
