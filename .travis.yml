@@ -20,3 +20,6 @@ deploy:
   bucket_path: "portefeuille-actions-angular"
   on:
     branch: master
+
+after_deploy:
+  - echo "done deploying"
